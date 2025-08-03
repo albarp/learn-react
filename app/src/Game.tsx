@@ -8,7 +8,7 @@ export default function Game() {
     const xIsNext = currentMove % 2 === 0
 
     const currentSquares = history[currentMove]
-    
+
     function handlePlay(nextSquares: Array<string>) {
         const nextHistory = [...history.splice(0, currentMove + 1), nextSquares]
         setHistory(nextHistory);
@@ -16,7 +16,7 @@ export default function Game() {
     }
 
     function jumpTo(nextMove: number) {
-       setCurrentMove(nextMove)
+        setCurrentMove(nextMove)
     }
 
     const moves = history.map((_, move) => {
@@ -26,11 +26,19 @@ export default function Game() {
         if (move > 0) {
             description = 'Go to move' + move
         }
-        return (
-            <li key={move}>
-                <button onClick={() => jumpTo(move)}>{description}</button>
-            </li>
-        )
+
+        if (move === currentMove) {
+            return (
+                <label>{'You are at move #…' + move}</label>
+            )
+        }
+        else {
+            return (
+                <li key={move}>
+                    <button onClick={() => jumpTo(move)}>{description}</button>
+                </li>
+            )
+        }
     });
 
     return (
