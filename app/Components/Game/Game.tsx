@@ -17,7 +17,7 @@ export default function Game() {
         const description = currentMove === 0 ? 'Go to game start' : `Go to move #${move}` 
 
         if (move === currentMove) {
-            return  <label>{'You are at move #…' + move}</label>
+            return  <label key={move}>{'You are at move #…' + move}</label>
         }
         else {
             return (
