@@ -5,7 +5,7 @@ export function Board(
         { squares: Array<string>, onSquareClick: (i: number) => void }) 
     {
 
-    const board = Array.from({length: 3}, (_, rowIndex) => {
+    const board = Array.from({length: 3}, (_, rowIndex) => (
         <div key={rowIndex} className="board-row">
             {
                 Array.from( {length:3}, (_, colIndex) => {
@@ -20,7 +20,7 @@ export function Board(
                 })
             }
         </div>
-    })
+    ))
 
     return (
         <>
