@@ -21,7 +21,8 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true
   },
   "include": ["src", "src/Components/Game/Board.tsx", "src/Components/Game/Game.tsx", "src/Components/Game/Square.tsx"]
 }

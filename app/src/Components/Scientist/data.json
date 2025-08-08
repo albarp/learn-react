@@ -1,0 +1,4 @@
+[
+    {"id": 1, "name": "Karl", "profession": "Phylosopher", "accomplishment": "comunism", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png/500px-Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png"},
+    {"id": 2, "name": "Neil", "profession": "Austronaut", "accomplishment": "moon", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Neil_Armstrong_pose.jpg/500px-Neil_Armstrong_pose.jpg"}
+]
