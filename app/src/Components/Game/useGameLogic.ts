@@ -35,6 +35,11 @@ export default function useGameLogic() {
         return 'Next turn is: ' + (xIsNext ? 'X' : 'O');
     }
 
+    function handleSortToggle(){
+        const historyCopy = history.slice()
+        setHistory(historyCopy.reverse())
+    }
+
     return({
         currentSquares,
         xIsNext,
@@ -43,7 +48,8 @@ export default function useGameLogic() {
         currentMove,
         handeSquareClick,
         jumpTo,
-        getStatus
+        getStatus,
+        handleSortToggle
     })
 }
 

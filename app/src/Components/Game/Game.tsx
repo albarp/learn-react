@@ -9,7 +9,8 @@ export default function Game() {
         currentSquares,
         jumpTo,
         handeSquareClick,
-        getStatus
+        getStatus,
+        handleSortToggle
     } = useGameLogic();
 
     const moves = history.map((_, move) => {
@@ -41,6 +42,7 @@ export default function Game() {
                     {moves}
                 </ol>
             </div>
+            <button onClick={handleSortToggle}>Sort</button>
         </div>
     )
 }

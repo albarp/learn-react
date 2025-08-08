@@ -23,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "Components/Game/Board.tsx", "Components/Game/Game.tsx", "Components/Game/Square.tsx"]
+  "include": ["src", "src/Components/Game/Board.tsx", "src/Components/Game/Game.tsx", "src/Components/Game/Square.tsx"]
 }
