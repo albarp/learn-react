@@ -3,12 +3,19 @@ import type Produce from './Produce'
 import ProduceCategoryRow from './ProduceCategoryRow'
 import { ProduceRow } from './ProduceRow'
 
-export default function ProduceTable ({produces}: {produces: Produce[]}) {
+export default function ProduceTable ({produces, filterText, isInStockOnly}: {produces: Produce[],  filterText: string, isInStockOnly: boolean}) {
+
 
     let lastCategory: string | null = null
     const produceRows: JSX.Element[] = []
 
     produces.forEach( p => {
+
+        if(p.name.toLowerCase().indexOf(filterText) === -1)
+            return
+
+        if(isInStockOnly && ! p.stocked)
+            return
 
         if(p.category !== lastCategory) {
             produceRows.push(
