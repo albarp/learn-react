@@ -6,10 +6,12 @@ import PackingList from "./Components/Packing/PackingList";
 import Scientists from "./Components/Scientist/Scientist";
 import LightSwitch from "./Components/LightSwitch/LightSwitch";
 import ColorChoose from "./Components/ColorSwitch/ColorChoose";
+import SculptureGallery from "./Components/SculptureGallery/SculptureGallery";
 
 function App() {
   return (
     <>
+      <SculptureGallery/>
       <ColorChoose />
       <LightSwitch />
       <Scientists />
