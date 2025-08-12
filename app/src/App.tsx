@@ -7,10 +7,18 @@ import Scientists from "./Components/Scientist/Scientist";
 import LightSwitch from "./Components/LightSwitch/LightSwitch";
 import ColorChoose from "./Components/ColorSwitch/ColorChoose";
 import SculptureGallery from "./Components/SculptureGallery/SculptureGallery";
+import Chat from "./Components/Chat/Chat";
+import TrafficLight from "./Components/TrafficLight/TrafficLight";
+import Marketplace from "./Components/Marketplace/Marketplace";
+import MovingDot from "./Components/MovingDot/MovingDot";
 
 function App() {
   return (
     <>
+      <MovingDot />
+      <Marketplace />
+      <TrafficLight />
+      <Chat />
       <SculptureGallery/>
       <ColorChoose />
       <LightSwitch />
