@@ -11,10 +11,12 @@ import Chat from "./Components/Chat/Chat";
 import TrafficLight from "./Components/TrafficLight/TrafficLight";
 import Marketplace from "./Components/Marketplace/Marketplace";
 import MovingDot from "./Components/MovingDot/MovingDot";
+import UserForm from "./Components/UserForm/UserForm";
 
 function App() {
   return (
     <>
+      <UserForm />
       <MovingDot />
       <Marketplace />
       <TrafficLight />
