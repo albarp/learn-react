@@ -13,10 +13,16 @@ import Marketplace from "./Components/Marketplace/Marketplace";
 import MovingDot from "./Components/MovingDot/MovingDot";
 import UserForm from "./Components/UserForm/UserForm";
 import ArtDetail from "./Components/ArtistDetail/ArtDetail";
+import BackgroundBox from "./Components/BackGroundBox/BackgroundBox";
+import ArtistList from "./Components/ArtistList/ArtistList";
+import ArtistDelete from "./Components/ArtistDelete/ArtistDelete";
 
 function App() {
   return (
     <>
+      <ArtistDelete />
+      <ArtistList />
+      <BackgroundBox />
       <ArtDetail />
       <UserForm />
       <MovingDot />
