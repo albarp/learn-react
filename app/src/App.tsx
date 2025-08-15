@@ -12,10 +12,12 @@ import TrafficLight from "./Components/TrafficLight/TrafficLight";
 import Marketplace from "./Components/Marketplace/Marketplace";
 import MovingDot from "./Components/MovingDot/MovingDot";
 import UserForm from "./Components/UserForm/UserForm";
+import ArtDetail from "./Components/ArtistDetail/ArtDetail";
 
 function App() {
   return (
     <>
+      <ArtDetail />
       <UserForm />
       <MovingDot />
       <Marketplace />
