@@ -17,10 +17,12 @@ import BackgroundBox from "./Components/BackGroundBox/BackgroundBox";
 import ArtistList from "./Components/ArtistList/ArtistList";
 import ArtistDelete from "./Components/ArtistDelete/ArtistDelete";
 import ShapeEditor from "./Components/ShapeEditor/ShapeEditor";
+import ThreeCounters from "./Components/ThreeCounters/ThreeCounters";
 
 function App() {
   return (
     <>
+      <ThreeCounters />
       <ShapeEditor />
       <ArtistDelete />
       <ArtistList />

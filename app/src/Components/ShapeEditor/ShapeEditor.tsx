@@ -4,17 +4,17 @@ export default function ShapeEditor() {
   const [shapes, setShapes] = useState([
     {
       x: 0,
-      y: 0,
+      y: 20,
       kind: "circle",
     },
     {
       x: 40,
-      y: 0,
+      y: 20,
       kind: "square",
     },
     {
       x: 80,
-      y: 0,
+      y: 20,
       kind: "circle",
     },
   ]);
@@ -43,12 +43,13 @@ export default function ShapeEditor() {
   ));
 
   return (
-    <div
-      style={{
-        height: 500,
-        width: 500,
-      }}
-    >
+         <div
+       style={{
+         height: 500,
+         width: 500,
+         position: "relative",
+       }}
+     >
       <button onClick={onMoveShapes}>Move circles down</button>
       <div>{shapeElements}</div>
     </div>
