@@ -16,10 +16,12 @@ import ArtDetail from "./Components/ArtistDetail/ArtDetail";
 import BackgroundBox from "./Components/BackGroundBox/BackgroundBox";
 import ArtistList from "./Components/ArtistList/ArtistList";
 import ArtistDelete from "./Components/ArtistDelete/ArtistDelete";
+import ShapeEditor from "./Components/ShapeEditor/ShapeEditor";
 
 function App() {
   return (
     <>
+      <ShapeEditor />
       <ArtistDelete />
       <ArtistList />
       <BackgroundBox />
