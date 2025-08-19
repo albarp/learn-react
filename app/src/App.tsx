@@ -18,10 +18,12 @@ import ArtistList from "./Components/ArtistList/ArtistList";
 import ArtistDelete from "./Components/ArtistDelete/ArtistDelete";
 import ShapeEditor from "./Components/ShapeEditor/ShapeEditor";
 import ThreeCounters from "./Components/ThreeCounters/ThreeCounters";
+import InspiringSculptors from "./Components/InspiringSculptors/InspiringSculptors";
 
 function App() {
   return (
     <>
+      <InspiringSculptors />
       <ThreeCounters />
       <ShapeEditor />
       <ArtistDelete />
