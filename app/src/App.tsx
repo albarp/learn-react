@@ -19,10 +19,14 @@ import ArtistDelete from "./Components/ArtistDelete/ArtistDelete";
 import ShapeEditor from "./Components/ShapeEditor/ShapeEditor";
 import ThreeCounters from "./Components/ThreeCounters/ThreeCounters";
 import InspiringSculptors from "./Components/InspiringSculptors/InspiringSculptors";
+import StopWatch from "./Components/StopWatch/StopWatch";
+import FocusInput from "./Components/FocusInput/FocusInput";
 
 function App() {
   return (
     <>
+      <FocusInput />
+      <StopWatch />
       <InspiringSculptors />
       <ThreeCounters />
       <ShapeEditor />
