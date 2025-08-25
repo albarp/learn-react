@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import createConnection from "./Connection"
 
-export default function ChatConnect() {
+export default function() {
 
     // use effect non è async
     useEffect(() => {
@@ -20,7 +20,7 @@ export default function ChatConnect() {
         }
        }
 
-    }, [])
+    }, []) // run only when mounted the first time (not at every render)
 
     return (
         <>

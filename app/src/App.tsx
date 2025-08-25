@@ -22,11 +22,13 @@ import InspiringSculptors from "./Components/InspiringSculptors/InspiringSculpto
 import StopWatch from "./Components/StopWatch/StopWatch";
 import FocusInput from "./Components/FocusInput/FocusInput";
 import VideoPlayerApp from "./Components/VideoPlayer/VideoPlayerApp";
+import ChatConnect from "./Components/ChatConnect/ChatConnect";
 
 
 function App() {
   return (
     <>
+      <ChatConnect />
       <VideoPlayerApp />
       <FocusInput />
       <StopWatch />
