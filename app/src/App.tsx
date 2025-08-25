@@ -21,11 +21,13 @@ import ThreeCounters from "./Components/ThreeCounters/ThreeCounters";
 import InspiringSculptors from "./Components/InspiringSculptors/InspiringSculptors";
 import StopWatch from "./Components/StopWatch/StopWatch";
 import FocusInput from "./Components/FocusInput/FocusInput";
+import VideoPlayerApp from "./Components/VideoPlayer/VideoPlayerApp";
 
 
 function App() {
   return (
     <>
+      <VideoPlayerApp />
       <FocusInput />
       <StopWatch />
       <InspiringSculptors />

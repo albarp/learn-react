@@ -7,7 +7,7 @@ export default function Chat() {
   function handleSubmmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setTimeout(() => {
-        alert(recipient)
+        alert(recipient) // A state variable’s value never changes within a render, even if its event handler’s code is asynchronous. 
     }, 5000);
   }
 
