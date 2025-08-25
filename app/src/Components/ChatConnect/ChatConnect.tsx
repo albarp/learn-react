@@ -1,22 +1,22 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import createConnection from "./Connection"
 
 export default function() {
 
+    const connectionRef = useRef<any>(null)
+
     // use effect non è async
     useEffect(() => {
-       const initConnection = async () => {
-        const connection = createConnection()
-        await connection.connect()
-        return connection
-       }
+        connectionRef.current = createConnection()
 
-       let connection: any
-       initConnection().then(conn => {connection = conn})
+        connectionRef.current
+            .connect()
+            .catch(console.error)
 
        return () => {
-        if(connection) {
-            connection.disconnect().catch(console.error)
+        if(connectionRef.current) {
+            connectionRef.current.disconnect()
+            .catch(console.error)
         }
        }
 
