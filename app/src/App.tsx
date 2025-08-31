@@ -23,11 +23,13 @@ import StopWatch from "./Components/StopWatch/StopWatch";
 import FocusInput from "./Components/FocusInput/FocusInput";
 import VideoPlayerApp from "./Components/VideoPlayer/VideoPlayerApp";
 import ChatConnect from "./Components/ChatConnect/ChatConnect";
+import ReducerTodoApp from "./Components/Reducer2/ReducerTodoApp";
 
 
 function App() {
   return (
     <>
+      <ReducerTodoApp />
       <ChatConnect />
       <VideoPlayerApp />
       <FocusInput />
