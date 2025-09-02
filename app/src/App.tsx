@@ -24,11 +24,12 @@ import FocusInput from "./Components/FocusInput/FocusInput";
 import VideoPlayerApp from "./Components/VideoPlayer/VideoPlayerApp";
 import ChatConnect from "./Components/ChatConnect/ChatConnect";
 import ReducerTodoApp from "./Components/Reducer2/ReducerTodoApp";
-
+import Quiz from "./Components/Quiz/Quiz";
 
 function App() {
   return (
     <>
+      <Quiz/>
       <ReducerTodoApp />
       <ChatConnect />
       <VideoPlayerApp />
@@ -46,7 +47,7 @@ function App() {
       <Marketplace />
       <TrafficLight />
       <Chat />
-      <SculptureGallery/>
+      <SculptureGallery />
       <ColorChoose />
       <LightSwitch />
       <Scientists />
