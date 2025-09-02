@@ -25,10 +25,12 @@ import VideoPlayerApp from "./Components/VideoPlayer/VideoPlayerApp";
 import ChatConnect from "./Components/ChatConnect/ChatConnect";
 import ReducerTodoApp from "./Components/Reducer2/ReducerTodoApp";
 import Quiz from "./Components/Quiz/Quiz";
+import Debounce from "./Components/Debounce/Debounce";
 
 function App() {
   return (
     <>
+      <Debounce />
       <Quiz/>
       <ReducerTodoApp />
       <ChatConnect />
