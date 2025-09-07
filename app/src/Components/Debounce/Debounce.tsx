@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import useFruitSearch from "./useFruitSearch";
+import useGetFruits from "./useFruitSearch";
 
 export default function Debounce() {
-  const { getFruits, isLoading, error } = useFruitSearch();
+  const { getFruits, getFruitsIsLoading, getFruitsError } = useGetFruits();
 
   const [userInput, setUserInput] = useState("");
-  const [serverReply, setServerReply] = useState("resp: ");
+  const [serverReply, setServerReply] = useState("");
   const setTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null)
 
@@ -41,7 +41,7 @@ export default function Debounce() {
 
   return (
     <>
-      <label>{isLoading ? 'loading..' : error ? error : serverReply}</label>
+      <label>{getFruitsIsLoading ? 'loading..' : getFruitsError ? getFruitsError : serverReply}</label>
       <input
         type="text"
         onChange={(e) => userInputHandler(e)}

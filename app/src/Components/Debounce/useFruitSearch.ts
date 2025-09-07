@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useFruitSearch() {
+export default function useGetFruits() {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
 
@@ -31,7 +31,7 @@ export default function useFruitSearch() {
 
     return {
         getFruits,
-        isLoading,
-        error
+        getFruitsIsLoading: isLoading,
+        getFruitsError: error
     }
 }
