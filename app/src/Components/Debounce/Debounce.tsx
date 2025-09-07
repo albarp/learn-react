@@ -1,4 +1,4 @@
-import { useRef, useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import useFruitSearch from "./useFruitSearch";
 
 export default function Debounce() {
@@ -8,6 +8,10 @@ export default function Debounce() {
   const [serverReply, setServerReply] = useState("resp: ");
   const setTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null)
+
+  useEffect(() =>{
+    getFruits('').then (names => setServerReply(names))
+  }, [])
 
   async function userInputHandler(e: ChangeEvent<HTMLInputElement>) {
 
@@ -26,7 +30,7 @@ export default function Debounce() {
     setTimeoutRef.current = setTimeout(async () => {
       // we need to use e.target.value instead of userInput, otherwise we have stale data
       const names = await getFruits(e.target.value, abortControllerRef.current?.signal);
-      setServerReply("resp: " + names);
+      setServerReply(names);
     }, 1500);
   }
 
