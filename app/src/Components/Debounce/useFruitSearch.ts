@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function useGetFruits() {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
 
-    async function getFruits(filter: string, signal?: AbortSignal) {
+    // stabilize the getFruits function with te use of useCallback so that
+    // the getFruits is created just once since it has no deps
+    const getFruits = useCallback(async (filter: string, signal?: AbortSignal) => {
         try{
             setIsLoading(true)
             setError('')
@@ -27,7 +29,7 @@ export default function useGetFruits() {
         finally{
             setIsLoading(false)
         }
-    }
+    }, [])
 
     return {
         getFruits,

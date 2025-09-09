@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import useGetFruits from "./useFruitSearch";
 
 export default function Debounce() {
@@ -10,12 +10,8 @@ export default function Debounce() {
   const abortControllerRef = useRef<AbortController | null>(null)
 
   useEffect(() =>{
-    getFruits('').then (names => setServerReply(names))
-  }, [])
 
-  async function userInputHandler(e: ChangeEvent<HTMLInputElement>) {
-
-    setUserInput(e.target.value);
+    if(userInput === '') return
 
     // Handle abort requests
     if(abortControllerRef.current)
@@ -28,11 +24,19 @@ export default function Debounce() {
     if (setTimeoutRef.current) clearTimeout(setTimeoutRef.current);
     
     setTimeoutRef.current = setTimeout(async () => {
-      // we need to use e.target.value instead of userInput, otherwise we have stale data
-      const names = await getFruits(e.target.value, abortControllerRef.current?.signal);
-      setServerReply(names);
+      const fruits = await getFruits(userInput, abortControllerRef.current?.signal);
+      setServerReply(fruits);
     }, 1500);
-  }
+
+    return () => {
+      if (setTimeoutRef.current) clearTimeout(setTimeoutRef.current);
+      if (abortControllerRef.current) abortControllerRef.current.abort()
+
+    }
+  // getFruits shouldn't have closure variables that get stale,
+  // but to be on the safe side, add a dep on getFruits to avoid stale data
+  }, [userInput, getFruits]) 
+
 
   function handleAbort(){
     if(abortControllerRef.current)
@@ -44,7 +48,7 @@ export default function Debounce() {
       <label>{getFruitsIsLoading ? 'loading..' : getFruitsError ? getFruitsError : serverReply}</label>
       <input
         type="text"
-        onChange={(e) => userInputHandler(e)}
+        onChange={(e) => setUserInput(e.target.value)}
         value={userInput}
       ></input>
       <button onClick={handleAbort}>Abort</button>
