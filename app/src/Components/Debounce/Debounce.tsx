@@ -6,31 +6,22 @@ export default function Debounce() {
 
   const [userInput, setUserInput] = useState("");
   const [serverReply, setServerReply] = useState("");
-  const setTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null)
 
   useEffect(() =>{
 
-    if(userInput === '') return
-
     // Handle abort requests
-    if(abortControllerRef.current)
-      abortControllerRef.current.abort()
-
-    // Create new controller for this debounced request
-    abortControllerRef.current = new AbortController()
-
-    // handle debouce
-    if (setTimeoutRef.current) clearTimeout(setTimeoutRef.current);
+   const controller = new AbortController()
+   abortControllerRef.current = controller // save it so that the abort button can access it
     
-    setTimeoutRef.current = setTimeout(async () => {
-      const fruits = await getFruits(userInput, abortControllerRef.current?.signal);
+    const timeoutId = setTimeout(async () => {
+      const fruits = await getFruits(userInput, controller.signal);
       setServerReply(fruits);
     }, 1500);
 
     return () => {
-      if (setTimeoutRef.current) clearTimeout(setTimeoutRef.current);
-      if (abortControllerRef.current) abortControllerRef.current.abort()
+      clearTimeout(timeoutId);
+      controller.abort()
 
     }
   // getFruits shouldn't have closure variables that get stale,
@@ -39,6 +30,7 @@ export default function Debounce() {
 
 
   function handleAbort(){
+    // always abort the last abort controller
     if(abortControllerRef.current)
       abortControllerRef.current.abort()
   }
